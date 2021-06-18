@@ -300,11 +300,9 @@ class BadgeController extends Controller
         // 3. 최고속도 (300)
         $max_speed_value = null;
         if ($sum_max_speed_value >= 50 && !($checkSpeed == 4)) {
-            $max_speed_value .= "50km";
+            $max_speed_value .= "50km/h";
             $badge_type_code = self::_MAXSPEED_50;
-            if ($max_speed_value > 0) {
-                $badge_name = $this->badgeMsg($max_speed_value);
-            }
+            $badge_name = "최고 속도 " . $max_speed_value . " 달성";
             // Badge 테이블 레코드 생성
             $this->badge->makeBadge($stat_user, $badge_type_code, $badge_name);
             // Notification 테이블 레코드 생성
@@ -317,11 +315,9 @@ class BadgeController extends Controller
                 201
             );
         } elseif ($sum_max_speed_value >= 30 && !($checkSpeed == 3)) {
-            $max_speed_value .= "30km";
+            $max_speed_value .= "30km/h";
             $badge_type_code = self::_MAXSPEED_30;
-            if ($max_speed_value > 0) {
-                $badge_name = $this->badgeMsg($max_speed_value);
-            }
+            $badge_name = "최고 속도 " . $max_speed_value . " 달성";
             // Badge 테이블 레코드 생성
             $this->badge->makeBadge($stat_user, $badge_type_code, $badge_name);
             // Notification 테이블 레코드 생성
@@ -334,11 +330,9 @@ class BadgeController extends Controller
                 201
             );
         } elseif ($sum_max_speed_value >= 25 && !($checkSpeed == 2)) {
-            $max_speed_value .= "25km";
+            $max_speed_value .= "25km/h";
             $badge_type_code = self::_MAXSPEED_25;
-            if ($max_speed_value > 0) {
-                $badge_name = $this->badgeMsg($max_speed_value);
-            }
+            $badge_name = "최고 속도 " . $max_speed_value . " 달성";
             // Badge 테이블 레코드 생성
             $this->badge->makeBadge($stat_user, $badge_type_code, $badge_name);
             // Notification 테이블 레코드 생성
@@ -351,11 +345,9 @@ class BadgeController extends Controller
                 201
             );
         } elseif ($sum_max_speed_value >= 20 && !($checkSpeed == 1)) {
-            $max_speed_value .= "20km";
+            $max_speed_value .= "20km/h";
             $badge_type_code = self::_MAXSPEED_20;
-            if ($max_speed_value > 0) {
-                $badge_name = $this->badgeMsg($max_speed_value);
-            }
+            $badge_name = "최고 속도 " . $max_speed_value . " 달성";
             // Badge 테이블 레코드 생성
             $this->badge->makeBadge($stat_user, $badge_type_code, $badge_name);
             // Notification 테이블 레코드 생성
@@ -368,11 +360,9 @@ class BadgeController extends Controller
                 201
             );
         } elseif ($sum_max_speed_value >= 15 && !$checkSpeed) {
-            $max_speed_value .= "15km";
+            $max_speed_value .= "15km/h";
             $badge_type_code = self::_MAXSPEED_15;
-            if ($max_speed_value > 0) {
-                $badge_name = $this->badgeMsg($max_speed_value);
-            }
+            $badge_name = "최고 속도 " . $max_speed_value . " 달성";
             // Badge 테이블 레코드 생성
             $this->badge->makeBadge($stat_user, $badge_type_code, $badge_name);
             // Notification 테이블 레코드 생성
