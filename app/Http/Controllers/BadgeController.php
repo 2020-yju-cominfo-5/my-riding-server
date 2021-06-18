@@ -190,7 +190,7 @@ class BadgeController extends Controller
         $checkTime = $this->badge->checkTimeBadge($stat_user);
         // 2. 시간 (200)
         $time_value = null;
-        if ($sum_time >= 50 && !($checkTime == 4)) {
+        if ($sum_time >= 3000 && !($checkTime == 4)) {
             $time_value .= "50시간";
             $badge_type_code = self::_TIME_50;
 
@@ -208,7 +208,7 @@ class BadgeController extends Controller
                 ['user' => $stat_user, 'badge_type' => $badge_type_code, 'badge_name' => $badge_name, 'sum_time' => $sum_time],
                 201
             );
-        } elseif ($sum_time >= 30 && !($checkTime == 3)) {
+        } elseif ($sum_time >= 1800 && !($checkTime == 3)) {
             $time_value .= "30시간";
             $badge_type_code = self::_TIME_30;
 
@@ -226,7 +226,7 @@ class BadgeController extends Controller
                 ['user' => $stat_user, 'badge_type' => $badge_type_code, 'badge_name' => $badge_name, 'sum_time' => $sum_time],
                 201
             );
-        } elseif ($sum_time >= 20 && !($checkTime == 2)) {
+        } elseif ($sum_time >= 1200 && !($checkTime == 2)) {
             $time_value .= "20시간";
             $badge_type_code = self::_TIME_20;
 
@@ -244,7 +244,7 @@ class BadgeController extends Controller
                 ['user' => $stat_user, 'badge_type' => $badge_type_code, 'badge_name' => $badge_name, 'sum_time' => $sum_time],
                 201
             );
-        } elseif ($sum_time >= 10 && !($checkTime == 1)) {
+        } elseif ($sum_time >= 600 && !($checkTime == 1)) {
             $time_value .= "10시간";
             $badge_type_code = self::_TIME_10;
 
@@ -262,7 +262,7 @@ class BadgeController extends Controller
                 ['user' => $stat_user, 'badge_type' => $badge_type_code, 'badge_name' => $badge_name, 'sum_time' => $sum_time],
                 201
             );
-        } elseif ($sum_time >= 5 && !$checkTime) {
+        } elseif ($sum_time >= 300 && !$checkTime) {
             $time_value .= "5시간";
             $badge_type_code = self::_TIME_5;
 
