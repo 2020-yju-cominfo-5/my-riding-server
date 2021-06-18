@@ -143,6 +143,13 @@ class User extends Authenticatable
         $score += $existed_score;
         // 점수 필드 업데이트
         $user->user_score_of_riding = $score;
+
+        // 기존 라이딩 횟수
+        $existed_number_of_riding = $user->user_num_of_riding;
+        $number = $existed_number_of_riding + 1;
+
+        // 라이딩 횟수 필드 업데이트
+        $user->user_num_of_riding = $number;
         $user->save();
     }
 
@@ -152,7 +159,7 @@ class User extends Authenticatable
         $param = ['id', 'user_nickname', 'user_score_of_riding'];
         $returnData = User::select($param)
             ->orderByDesc('user_score_of_riding')
-            ->take(10)
+            ->take(2)
             ->get();
 
         return $returnData;
